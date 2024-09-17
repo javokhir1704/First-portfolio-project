@@ -1,0 +1,399 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-white:#f0f0f0;
+  --main-red:#be3144;
+  --main-blue: #45567d;
+  --main-gray: #303841;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
+  height: 100vh;
+}
+
+.nav {
+  background: var(--main-red);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+  list-style: none;
+}
+.nav-list a {
+  display: block;
+  font-size: 22px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--main-white);
+  transition: background 0.15s;
+}
+.nav-list a:hover {
+  background: var(--main-blue);
+}
+.nav-list a:active {
+  opacity: 0.7;
+}
+
+.welcom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+.welcom-section h1 {
+  font-size: 60px;
+}
+.welcom-section p {
+  font-size: 2rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--main-red);
+}
+
+h1,
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.projects-section {
+  background: var(--main-blue);
+  text-align: center;
+  padding: 6rem 1rem;
+}
+.projects-section .projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 4rem auto;
+  border-bottom: 2px solid var(--main-white);
+  font-size: 2.6rem;
+}
+.projects-section .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* minmax() value of "grid-template-columns"' property:
+
+      The minmax() function accepts two arguments: a minimum length value and a maximum length value. And what that tells a grid container is that the grid-template-columns can be no "narrower" than the minimum value, but no "wider" than the maximum value
+
+       The "auto-fit" keyword is used to automatically fit as many columns as possible into the available space. The "minmax(320px, 1fr)" function is used to define the minimum and maximum size of each column.
+
+       The number of columns in your grid layout will depend on the width of the grid container and the minimum width you've specified for each column.
+
+       When you use auto-fit with repeat in the grid-template-columns property, the grid will create as many columns as possible based on the minimum width you've specified (320px in this case) and the available space in the grid container.
+  */
+  grid-gap: 2.5rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+.projects-section .projects-grid a.project {
+  background: var(--main-gray);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--main-white);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+.projects-section .projects-grid a.project img.project-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+}
+.projects-section .projects-grid a.project p.project-title {
+  font-size: 1.3rem;
+  padding: 1rem 0.5rem;
+}
+.projects-section .projects-grid a.project p.project-title span.code {
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
+}
+.projects-section .projects-grid a.project:hover p.project-title span.code {
+  color: rgb(255, 181, 44);
+}
+.projects-section a.btn-show-all {
+  font-size: 1.3rem;
+  color: var(--main-white);
+  background: var(--main-gray);
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 2px;
+  transition: background 0.3s ease-out;
+}
+.projects-section a.btn-show-all:hover {
+  background: var(--main-red);
+}
+.projects-section a.btn-show-all i.fas {
+  font-size: 20px;
+  margin-left: 5px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+.projects-section a.btn-show-all:hover i.fas {
+  transform: translateX(2px);
+}
+
+.contact-section {
+  background: var(--main-gray);
+  padding: 0 1rem;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.contact-section .contact-section-header h2 {
+  font-size: 3.8rem;
+}
+.contact-section .contact-section-header p {
+  font-style: italic;
+  font-size: 18px;
+}
+.contact-section .contact-links {
+  width: 100%;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-section .contact-links a.contact-details {
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--main-white);
+}
+.contact-section .contact-links a.contact-details:hover {
+  transform: translateY(5px);
+}
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background: var(--main-gray);
+  border-top: 4px solid var(--main-red);
+}
+footer p {
+  margin: 20px;
+  font-size: 18px;
+}
+footer p a {
+  text-decoration: none;
+  color: var(--main-red);
+  transition: opacity 0.15s;
+}
+footer p a:hover {
+  opacity: 0.7;
+}
+footer p a:active {
+  opacity: 0.5;
+}
+
+@media (max-width: 580px) {
+  html p {
+    font-size: 0.8rem;
+  }
+  .nav {
+    background: var(--main-red);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .nav-list {
+    display: flex;
+    margin-right: 2rem;
+    list-style: none;
+  }
+  .nav-list a {
+    display: block;
+    font-size: 22px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--main-white);
+    transition: background 0.15s;
+  }
+  .nav-list a:hover {
+    background: var(--main-blue);
+  }
+  .nav-list a:active {
+    opacity: 0.7;
+  }
+  .welcom-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  }
+  .welcom-section h1 {
+    font-size: 3rem;
+  }
+  .welcom-section p {
+    font-size: 1.5rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--main-red);
+  }
+  .projects-section {
+    background: var(--main-blue);
+    text-align: center;
+    padding: 6rem 1rem;
+  }
+  .projects-section .projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 3rem auto;
+    border-bottom: 2px solid var(--main-white);
+    font-size: 1.6rem;
+  }
+  .projects-section .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* minmax() value of "grid-template-columns"' property:
+
+        The minmax() function accepts two arguments: a minimum length value and a maximum length value. And what that tells a grid container is that the grid-template-columns can be no "narrower" than the minimum value, but no "wider" than the maximum value
+
+         The "auto-fit" keyword is used to automatically fit as many columns as possible into the available space. The "minmax(320px, 1fr)" function is used to define the minimum and maximum size of each column.
+
+         The number of columns in your grid layout will depend on the width of the grid container and the minimum width you've specified for each column.
+
+         When you use auto-fit with repeat in the grid-template-columns property, the grid will create as many columns as possible based on the minimum width you've specified (320px in this case) and the available space in the grid container.
+    */
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+  }
+  .projects-section .projects-grid a.project {
+    background: var(--main-gray);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--main-white);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+  }
+  .projects-section .projects-grid a.project img.project-image {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    flex-grow: 1;
+  }
+  .projects-section .projects-grid a.project p.project-title {
+    font-size: 1.3rem;
+    padding: 1rem 0.5rem;
+  }
+  .projects-section .projects-grid a.project p.project-title span.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+  }
+  .projects-section .projects-grid a.project:hover p.project-title span.code {
+    color: rgb(255, 181, 44);
+  }
+  .projects-section a.btn-show-all {
+    font-size: 1.3rem;
+    color: var(--main-white);
+    background: var(--main-gray);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2px;
+    transition: background 0.3s ease-out;
+  }
+  .projects-section a.btn-show-all:hover {
+    background: var(--main-red);
+  }
+  .projects-section a.btn-show-all i.fas {
+    font-size: 20px;
+    margin-left: 5px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+  .projects-section a.btn-show-all:hover i.fas {
+    transform: translateX(2px);
+  }
+  .contact-section {
+    background: var(--main-gray);
+    padding: 0 1rem;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+  .contact-section .contact-section-header h2 {
+    font-size: 3rem;
+  }
+  .contact-section .contact-section-header p {
+    font-style: italic;
+    font-size: 18px;
+  }
+  .contact-section .contact-links {
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contact-section .contact-links a.contact-details {
+    font-size: 1rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--main-white);
+  }
+  .contact-section .contact-links a.contact-details:hover {
+    transform: translateY(5px);
+  }
+}/*# sourceMappingURL=styles.css.map */
